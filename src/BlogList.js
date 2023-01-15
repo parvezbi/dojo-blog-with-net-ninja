@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const BlogList = ({catchBlogs, title}) => {
     // const allBlogs = props.catchBlogs;
     // const title = props.title;
@@ -6,8 +8,10 @@ const BlogList = ({catchBlogs, title}) => {
             <h1>{title}</h1>
             {catchBlogs.map((blog)=> (
                 <div className="blog-preview" key={blog.id}>
-                    <h1>{blog.title}</h1>
-                    <p>Written By: {blog.author}</p>
+                    <Link to={`/blogs/${blog.id}`}>
+                        <h1>{blog.title}</h1>
+                        <p>Written By: {blog.author}</p>
+                    </Link>
                 </div>
             ))}
         </div>
